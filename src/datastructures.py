@@ -39,24 +39,20 @@ class FamilyStructure:
         return randint(0, 99999999)
 
     def add_member(self, member):
-        # fill this method and update the return
         print('add_member')
         print(member)
         self._members.append(member)
         return "se ha añadido un miembro"
-    
-    def delete_member(self, id):
-        for member in self._members:
-            print(member["id"])
-            if (id == member["id"]):
-                self._members.remove(member)
-                return True
-            return False
-            
 
     def delete_member(self, id):
-        # fill this method and update the return
-        pass
+        for member in self._members:
+           if (id == member["id"]):
+              self._members.remove(member)
+              return {"done": True}
+        return {"done": False}
+        
+    def get_members(self):
+        return self._members
 
     def get_member(self, id):
         # fill this method and update the return
